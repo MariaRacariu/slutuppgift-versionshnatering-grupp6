@@ -3,4 +3,5 @@
 
 # ignore ALL files in ANY directory named temp
 temp/ 
-test.txt
+
+Group 1.png
