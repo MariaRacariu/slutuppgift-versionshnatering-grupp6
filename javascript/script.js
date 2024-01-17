@@ -13,3 +13,5 @@ const firebaseConfig = {
   messagingSenderId: "449173684587",
   appId: "1:449173684587:web:c5a004cb69a21599a3cc2e"
 };
+
+console.log("this is a test to see if script.js is alive");
