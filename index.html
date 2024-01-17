@@ -4,44 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style/style.css">
-    <title>Home</title>
+    <title>Login</title>
+    <script src="javascript/navigation.js" defer></script>
+
   </head>
 
-  <body>
+  <body id="loginPageHTML" class="">
+    <img src="media/Cloudcover.jpg" alt="Cloudpicture" class="cloudCover ">
+    
     <div class="FlexIndex">
-      <div class="Flexhome">
-        <nav>
-          <a href="index.html">Home</a>
-          <a href="about.html">About Us</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-        <div class="logoName">
+      
+        <div id="nameOfLogo" class="logoName">
         <img src="media/logoiconname.png" alt="LogoCloudZ" />
-        <p>"Be your thought"</p>
+        <p class="heroText">"Be your thought"</p>
       </div>
-      <footer>
-        <a href=""><img src="" alt="githublogo" /></a>
-        <a href=""><img src="" alt="xlogo" /></a>
-        <a href=""><img src="" alt="facebooklogo" /></a>
-        <a href=""><img src="" alt="instagramlogo" /></a>
+      
+      </div>
+      <div class="display-flex loginButtons">
+        <p><b>LOGIN</b></p>
+        <button class="googleLoginButton btn">Login with google</button>
+        <p>or</p>
+        <button class="withoutLoginButton btn">Continue without login</button>
+      </div>
+      <footer class="footer display-flex">
+        <a href=""><img src="media/githubMedia.png" alt="githublogo" /></a>
+        <a href=""><img src="media/xMedia.png" alt="xlogo" /></a>
+        <a href=""><img src="media/facebookMedia.png" alt="facebooklogo" /></a>
+        <a href=""><img src="media/instagramMedia.png" alt="instagramlogo" /></a>
       </footer>
-      </div>
-      <div class="FlexMessage">
-        <section class="section-home">
-          <img src="" alt="" />
-          <div class="publicMessagesData">
-            <div class="messageData">
-              <img src="" alt="" />
-              <p></p>
-              <img src="" alt="" />
-            </div>
-            <form action="submit">
-              <input type="text" />
-              <button>Post</button>
-            </form>
-          </div>
-        </section>
-      </div>
     </div>
   </body>
 </html>
