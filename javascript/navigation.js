@@ -15,6 +15,7 @@ const navigationContent = document.getElementById("navigationContent");
 const darkMode = document.getElementById("darkMode");
 const lightMode = document.getElementById("lightMode");
 const iconClose = document.getElementById("iconClose");
+const userMessageForm = document.getElementById("userMessageFormID");
 
 navigationBar.addEventListener("click", function () {
   navigationContent.style.cssText =
@@ -35,4 +36,6 @@ navigationBar.addEventListener("click", function () {
   navigationBar.style.display = "none";
   navigationBar.classList.add("hide");
   navigationContent.classList.add("open-navigation");
+
+  userMessageForm.style.position = "inherit";
 });

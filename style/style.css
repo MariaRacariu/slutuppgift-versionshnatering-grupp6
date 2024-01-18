@@ -11,59 +11,140 @@ body {
   margin: 0 auto;
 }
 
-.display-flex {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .hide {
   display: none;
 }
 
 @media only screen and (min-width: 640px) {
+  /* Layout */
   .FlexIndex {
     display: flex;
     width: 100%;
     height: 100vh;
-    border: red solid 2px;
     max-width: 1800px;
     margin: auto;
+    background-color: white;
   }
 
   .Flexhome {
     background-image: url("../media/Cloudcover.jpg");
-    width: 50%;
-    border: red solid 2px;
+    background-position: 0%;
+    background-size: cover;
+    width: 40%;
+    position: relative;
+    height: 100vh;
+    margin: 0;
   }
 
-  .FlexIndex {
-    background-color: white;
-    border: gray solid 2px;
+  .FlexMessage {
+    width: 60%;
+    max-height: 100vh;
+    position: relative;
   }
 
   .logoName {
     text-align: center;
     color: white;
     font-size: 1.6rem;
-    border: rgb(0, 255, 179) solid 2px;
+    margin-top: 120px;
+  }
+
+  #loginInfo p {
+    font-size: 16px;
+    padding-bottom: 24px;
+  }
+
+  .logoutBtn {
+    border-radius: 5px;
+    background: #70c4de;
+    width: 93px;
+    height: 38px;
+    flex-shrink: 0;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+
+    font-size: 16px;
+    font-weight: 700;
   }
 
   nav {
     color: white;
-    border: blue solid 2px;
   }
 
-  section {
-    border: #70c4de solid 2px;
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    padding-bottom: 24px;
   }
 
-  footer {
-    border: purple solid 2px;
+  /* NAVIGATION */
+  .navigation {
+    display: flex;
+    justify-content: center;
+    padding: 24px 4px;
   }
+
+  .navigation-content {
+    display: flex;
+    gap: 32px;
+  }
+
+  .navigation-content a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+  }
+
+  /* HOME */
+  .messageData {
+    padding-left: 24px;
+  }
+
+  .userMessageForm {
+    position: absolute;
+
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    width: 100%;
+
+    margin-bottom: 64px;
+  }
+
+  .userMessageInput {
+    width: 552px;
+    height: 82px;
+    border: none;
+    background-color: #f2f1f1;
+    border-radius: 5px;
+    padding-left: 24px;
+  }
+
+  .editing-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-left: 32px;
+  }
+
+  /* ABOUT */
 }
 
 @media only screen and (max-width: 640px) {
+  .display-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .linksForPages {
     gap: 2px;
   }
@@ -199,12 +280,89 @@ body {
     text-decoration: none;
     color: white;
   }
+
+  body {
+    background-color: white;
+  }
+
+  .userMessageForm {
+    position: absolute;
+    
+    bottom: 86px;
+    width: 100%;
+    height: 83px;
+    background-color: #eef3f4;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    gap: 8px;
+
+    align-items: center;
+    justify-content: center;
+  }
+
+  .userMessageInput {
+    width: 311px;
+    padding: 20px 20px;
+    border: none;
+    border-radius: 36px;
+  }
 }
 
+.rectangle-left {
+  width: 83px;
+  height: 123px;
+  background-color: #dae3e7;
+}
 
+.publicMessageCard {
+  display: flex;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin: 12px 12px;
+  /* justify-content: space-between; */
+}
 
-@media only screen and (min-width: 1800px) {  /* Desktop */
+.publicMessagesData {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
 
-/* ////// index html ////// */
+.messageData {
+  padding-left: 12px;
+}
 
+.editing-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-right: 12px;
+}
+
+.edit-button {
+  background-color: #70c4de;
+  color: white;
+}
+.edit-button,
+.delete-button {
+  width: 67.222px;
+  height: 26px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+}
+
+.delete-button {
+  background-color: #eef3f4;
+  color: #000;
+}
+
+@media only screen and (min-width: 1800px) {
+  /* Desktop */
+
+  /* ////// index html ////// */
 }
