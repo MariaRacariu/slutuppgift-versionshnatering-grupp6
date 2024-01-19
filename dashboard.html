@@ -5,8 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="shortcut icon" href="#" type="image/x-icon">
+    <script type="module" src="main.js"></script>
 </head>
 <body>
-    
+    <button type="button" id="logOutButton">log out</button>
+    <form> 
+        <label for="message">Your message:</label>
+        <input type="text" name="message" id="message">
+
+        <button type="button" id="sendButton">Send</button>
+    </form>
+    <div id="msgContainer">
+        <h5>Username</h5>
+        <p>The msg</p>
+        <button type="button" id="deleteButton">Delete</button>
+        <button type="button" id="editButton">Edit</button>
+    </div>
 </body>
 </html>
