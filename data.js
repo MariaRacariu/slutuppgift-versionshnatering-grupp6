@@ -27,14 +27,12 @@ const auth = getAuth(app);
 const userLoggedInName = auth;
 console.log(userLoggedInName.displayName);
 
-export function saveDB() {
+export function saveDB(user) {
 
-
-    console.log("function runs");
-    const name = document.querySelector("#fullName").value;
+    const userperson = user;
     const msg = document.querySelector("#message").value;
 
-    console.log(msg);
+    // console.log(msg);
 
 
 
@@ -47,16 +45,6 @@ export function saveDB() {
 
 
     // this creates a post id
-    const newPostKey = push(child(ref(database), 'messages')).key;
-
-    // create a new array called updates
-    const updates = {};
-    // populate the array, if name in messages exists add new posts id
-    // with the new message, if the name doesn't exist it creates a
-    // new one  
-    updates['/messages/' + name + '/' + newPostKey] = msg;
-
-    // return updated array which updates the db
-    return update(ref(database), updates);
+    
 
 }

@@ -1,6 +1,8 @@
+import { saveDB } from "./data.js";
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import { getDatabase, ref, set, child, push, update } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -20,7 +22,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 // console.log(auth);
 const provider = new GoogleAuthProvider();
-
+const database = getDatabase(app);
 
 // if statment that checks if user is logged in
 onAuthStateChanged(auth, user => {
@@ -34,46 +36,54 @@ onAuthStateChanged(auth, user => {
 });
 
 const logoutBtn = document.querySelector("#logOutButton").addEventListener("click", logout);
+// const sendButton = document.querySelector("#sendButton").addEventListener("click", saveDB);
 const loginBtn = document.querySelector("#logInButton").addEventListener("click", login);
 
-// function login() {
-//     // If user is not logged in it will trigger the pop up to log in with google 
-//     // SO signInWithPopup is a promise
-//     signInWithPopup(auth, provider)
-//         .then((result) => {
-//             // This gives you a Google Access Token. You can use it to access the Google API.
-//             const credential = GoogleAuthProvider.credentialFromResult(result);
-//             const token = credential.accessToken;
-//             // console.log(token);
 
-//             // The signed-in user info.
-//             // gives you the display name of the user and their email and much more info (but idk wtf it means)
-//             const user = result.user;
-//             // console.log(user);
-//             // console.log(user.displayName)
-//             // const userData = user.displayName;
-//             // console.log(result);
-//             // window.location = '/dashboard.html';
-//             // Promise.all([result]).then((result) => {
-//             //     return result;
-//             // });
-//             return result;
-//         }).catch((error) => {
-//             // Handle Errors here.
-//             const errorCode = error.code;
-//             const errorMessage = error.message;
-//             // The email of the user's account used.
-//             const email = error.customData.email;
-//             // The AuthCredential type that was used.
-//             const credential = GoogleAuthProvider.credentialFromError(error);
-//             // ...
-//         });
-//     console.log(result);
-// }
+function login() {
+    // If user is not logged in it will trigger the pop up to log in with google 
+    signInWithPopup(auth, provider)
+        .then((result) => {
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            const credential = GoogleAuthProvider.credentialFromResult(result);
+            const token = credential.accessToken;
+
+            // The signed-in user info.
+            // gives you the display name of the user and their email and much more info
+            const user = result.user;
+
+            // console.log(user);
+            console.log(user.displayName)
+
+            // const userData = user.displayName;
+            // window.location = '/dashboard.html';
+
+            const newPostKey = push(child(ref(database), 'users')).key;
+
+            // create a new array called updates
+            const updates = {};
+            // populate the array, if name in messages exists add new posts id
+            // with the new message, if the name doesn't exist it creates a
+            // new one  
+            updates['users/' + newPostKey + '/'] = user.displayName;
+
+            // return updated array which updates the db
+            return update(ref(database), updates);
+
+        }).catch((error) => {
+            // Handle Errors here.
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // The email of the user's account used.
+            const email = error.customData.email;
+            // The AuthCredential type that was used.
+            const credential = GoogleAuthProvider.credentialFromError(error);
+            // ...
+        })
+}
 
 function logout() {
     auth.signOut(GoogleAuthProvider);
     window.location = '/index.html';
     // console.log("You are logged out");
 }
-

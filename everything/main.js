@@ -5,4 +5,3 @@ import { logout } from "../script.js";
 
 
 
-const sendButton = document.querySelector("#sendButton").addEventListener("click", saveDB);
