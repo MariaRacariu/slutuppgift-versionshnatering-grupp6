@@ -1,4 +1,3 @@
-import { saveDB } from "./data.js";
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
@@ -28,15 +27,13 @@ const database = getDatabase(app);
 onAuthStateChanged(auth, user => {
     if (user != null) {
         console.log('logged in!');
-        // window.location = '/dashboard.html';
+        window.location = '/dashboard.html';
     } else {
         console.log('No user');
-        // window.location = '/index.html';
     }
 });
 
 const logoutBtn = document.querySelector("#logOutButton").addEventListener("click", logout);
-// const sendButton = document.querySelector("#sendButton").addEventListener("click", saveDB);
 const loginBtn = document.querySelector("#logInButton").addEventListener("click", login);
 
 
@@ -52,22 +49,36 @@ function login() {
             // gives you the display name of the user and their email and much more info
             const user = result.user;
 
-            // console.log(user);
+            console.log(user);
             console.log(user.displayName)
 
-            // const userData = user.displayName;
-            // window.location = '/dashboard.html';
+            const test = "wawawwa";
 
-            const newPostKey = push(child(ref(database), 'users')).key;
+
+            const userEmail = user.displayName;
+            console.log(userEmail);
+
+            // const newPostKey = push(child(ref(database), 'users')).key;
+            const userData = {
+                email: user.email,
+                // Test to se if messages would work
+                // need unique id for eatch msg
+                messages: {
+                    text: test,
+                },
+            }
 
             // create a new array called updates
             const updates = {};
             // populate the array, if name in messages exists add new posts id
             // with the new message, if the name doesn't exist it creates a
             // new one  
-            updates['users/' + newPostKey + '/'] = user.displayName;
+            updates['users/' + userEmail + '/'] = userData;
+
+
 
             // return updated array which updates the db
+            window.location = '/dashboard.html';
             return update(ref(database), updates);
 
         }).catch((error) => {
