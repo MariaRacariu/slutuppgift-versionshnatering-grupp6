@@ -3,183 +3,85 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/index.css" />
     <title>Home</title>
     <script src="javascript/navigation.js" defer></script>
   </head>
 
   <body>
-    <div class="FlexIndex">
-      <div class="Flexhome">
-        <nav id="navigationID" class="navigation">
-          <img
-            class="logoIcon hide"
-            id="logoIconID"
-            src="media/logoicon.png"
-            alt="logo"
-          />
-          <img
-            id="navigationBarID"
-            class="navigationBars hide"
-            src="media/navvbarr.svg"
-            alt="navbar"
-          />
+    <nav id="mainNav" class="">
+      <img class="logo" src="media/logoicon.png" alt="LogoCloudZ" />
+      <img
+        id="navBarIcon"
+        class="bars-icon"
+        src="media/navvbarr.svg"
+        alt="navbar"
+      />
 
-          <div id="navigationContent" class="navigation-content">
-            <a href="home.html" id="iconClose" class="hide"
-              ><ion-icon class="icon-color" name="close-outline"></ion-icon
-            ></a>
-            <a id="homeLink" href="home.html">Home</a>
-            <a id="aboutLink" href="about.html">About Us</a>
-            <a id="contactLink" href="contact.html">Contact</a>
-            <button id="darkMode" class="dark-mode hide">Dark Mode</button>
-            <button id="lightMode" class="light-mode hide">Light Mode</button>
-          </div>
-        </nav>
-        <div class="logoName">
-          <img src="media/logoiconname.png" alt="LogoCloudZ" />
-          <p>"Be your thought"</p>
-        </div>
-        <div id="loginInfo" class="logoName">
-          <p id="loginUsername">Loged in as: Pia Pernilla</p>
-          <a href="index.html"><button class="logoutBtn">Logout</button></a>
-        </div>
-        <footer class="footer footer-general display-flex">
-          <a href=""><img src="media/githubMedia.png" alt="githublogo" /></a>
-          <a href=""><img src="media/xMedia.png" alt="xlogo" /></a>
-          <a href=""
-            ><img src="media/facebookMedia.png" alt="facebooklogo"
-          /></a>
-          <a href=""
-            ><img src="media/instagramMedia.png" alt="instagramlogo"
-          /></a>
-        </footer>
+      <div class="nav-content">
+        <ion-icon
+          id="navCloseIcon"
+          class="close-icon"
+          name="close-outline"
+        ></ion-icon>
+        <ul class="nav-items">
+          <li class="nav-item"><a href="home.html">Home</a></li>
+          <li class="nav-item"><a href="about.html">About Us</a></li>
+          <li class="nav-item"><a href="contact.html">Contact</a></li>
+          <li id="theme-switcher" class="nav-item switch">Light</li>
+        </ul>
+
       </div>
-      <div class="FlexMessage">
-        <section class="section-home">
-          <div class="publicMessageCard">
-            <div class="rectangle-left"></div>
-            <div class="publicMessagesData">
-              <div class="messageData">
-                <p><b>Pia Pernilla</b></p>
-                <p>
-                  Hello, i want to be a fireman and i also want to be a hero in
-                  the community
-                </p>
-              </div>
-              <div class="editing-buttons">
-                <button id="editButton" class="edit-button">Edit</button>
-                <button id="deleteButton" class="delete-button">Delete</button>
+    </nav>
+    <div class="container messages">
+      <div class="section col-left login">
+        <div class="logo">
+          <img src="media/logoiconname.png" alt="LogoCloudZ" />
+          <p class="heroText">"Be your thought"</p>
+        </div>
+        <div class="profile">
+          <div class="profile_info">
+            <p>You're logged in as:</p>
+            <b>Pia Pernilla</b>
+          </div>
+
+          <button class="btn primary">Logout</button>
+        </div>
+      </div>
+      <div class="section messages col-right">
+        <ul class="message-list">
+          <li class="message-item">
+            <div class="message-item_content">
+              <div class="message-item_author">Jane Doe</div>
+              <div class="message-item_text">
+                Hello, i want to be a fireman and i also want to be a hero in
+                the community
               </div>
             </div>
-          </div>
-          <div class="publicMessageCard">
-            <div class="rectangle-left"></div>
-            <div class="publicMessagesData">
-              <div class="messageData">
-                <p><b>Pia Pernilla</b></p>
-                <p>
-                  Hello, i want to be a fireman and i also want to be a hero in
-                  the community
-                </p>
-              </div>
-              <div class="editing-buttons">
-                <button id="editButton" class="edit-button">Edit</button>
-                <button id="deleteButton" class="delete-button">Delete</button>
-              </div>
+            <div class="message-item_actions">
+              <button class="btn primary">Edit</button>
+              <button class="btn negative">Delete</button>
             </div>
-          </div>
-          <div class="publicMessageCard">
-            <div class="rectangle-left"></div>
-            <div class="publicMessagesData">
-              <div class="messageData">
-                <p><b>Pia Pernilla</b></p>
-                <p>
-                  Hello, i want to be a fireman and i also want to be a hero in
-                  the community
-                </p>
-              </div>
-              <div class="editing-buttons">
-                <button id="editButton" class="edit-button">Edit</button>
-                <button id="deleteButton" class="delete-button">Delete</button>
-              </div>
-            </div>
-          </div>
-          <div class="publicMessageCard">
-            <div class="rectangle-left"></div>
-            <div class="publicMessagesData">
-              <div class="messageData">
-                <p><b>Pia Pernilla</b></p>
-                <p>
-                  Hello, i want to be a fireman and i also want to be a hero in
-                  the community
-                </p>
-              </div>
-              <div class="editing-buttons">
-                <button id="editButton" class="edit-button">Edit</button>
-                <button id="deleteButton" class="delete-button">Delete</button>
-              </div>
-            </div>
-          </div>
-          <div class="publicMessageCard">
-            <div class="rectangle-left"></div>
-            <div class="publicMessagesData">
-              <div class="messageData">
-                <p><b>Pia Pernilla</b></p>
-                <p>
-                  Hello, i want to be a fireman and i also want to be a hero in
-                  the community
-                </p>
-              </div>
-              <div class="editing-buttons">
-                <button id="editButton" class="edit-button">Edit</button>
-                <button id="deleteButton" class="delete-button">Delete</button>
-              </div>
-            </div>
-          </div>
-          <div class="publicMessageCard">
-            <div class="rectangle-left"></div>
-            <div class="publicMessagesData">
-              <div class="messageData">
-                <p><b>Pia Pernilla</b></p>
-                <p>
-                  Hello, i want to be a fireman and i also want to be a hero in
-                  the community
-                </p>
-              </div>
-              <div class="editing-buttons">
-                <button id="editButton" class="edit-button">Edit</button>
-                <button id="deleteButton" class="delete-button">Delete</button>
-              </div>
-            </div>
-          </div>
-          <div class="publicMessageCard">
-            <div class="rectangle-left"></div>
-            <div class="publicMessagesData">
-              <div class="messageData">
-                <p><b>Pia Pernilla</b></p>
-                <p>
-                  Hello, i want to be a fireman and i also want to be a hero in
-                  the community
-                </p>
-              </div>
-              <div class="editing-buttons">
-                <button id="editButton" class="edit-button">Edit</button>
-                <button id="deleteButton" class="delete-button">Delete</button>
-              </div>
-            </div>
-          </div>
-          <form action="submit" class="userMessageForm" id="userMessageFormID">
-            <input
-              type="text"
-              class="userMessageInput"
-              placeholder="Write your thoughts"
-            />
-            <button class="edit-button post-button">Post</button>
-          </form>
-        </section>
+          </li>
+        </ul>
+        <form action="submit" class="message-form" id="userMessageFormID">
+          <textarea
+            type="text"
+            class="message-input"
+            placeholder="Write your thoughts"
+            rows="2"
+          ></textarea>
+
+          <button class="btn primary">Post</button>
+        </form>
       </div>
     </div>
+    <footer class="footer display-flex">
+      <a href=""><img src="media/githubMedia.png" alt="githublogo" /></a>
+      <a href=""><img src="media/xMedia.png" alt="xlogo" /></a>
+      <a href=""><img src="media/facebookMedia.png" alt="facebooklogo" /></a>
+      <a href=""><img src="media/instagramMedia.png" alt="instagramlogo" /></a>
+    </footer>
   </body>
 
   <script

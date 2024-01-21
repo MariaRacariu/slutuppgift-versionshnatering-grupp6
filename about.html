@@ -1,115 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About</title>
-    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/index.css" />
     <script src="javascript/navigation.js" defer></script>
   </head>
   <body>
-    <div class="FlexIndex">
-      <div class="Flexhome">
-        <nav id="navigationID" class="navigation">
-          <img
-            class="logoIcon hide"
-            id="logoIconID"
-            src="media/logoicon.png"
-            alt="logo"
-          />
-          <img
-            id="navigationBarID"
-            class="navigationBars hide"
-            src="media/navvbarr.svg"
-            alt="navbar"
-          />
+    <nav id="mainNav">
+      <img class="logo" src="media/logoicon.png" alt="LogoCloudZ" />
+      <img
+        id="navBarIcon"
+        class="bars-icon"
+        src="media/navvbarr.svg"
+        alt="navbar"
+      />
 
-          <div id="navigationContent" class="navigation-content">
-            <a href="about.html" id="iconClose" class="hide"
-              ><ion-icon class="icon-color" name="close-outline"></ion-icon
-            ></a>
-            <a id="homeLink" href="home.html">Home</a>
-            <a id="aboutLink" href="about.html">About Us</a>
-            <a id="contactLink" href="contact.html">Contact</a>
-            <button id="darkMode" class="dark-mode hide">Dark Mode</button>
-            <button id="lightMode" class="light-mode hide">Light Mode</button>
-          </div>
-        </nav>
-        <div class="logoName">
-          <img src="media/logoiconname.png" alt="LogoCloudZ" />
-          <p>"Be your thought"</p>
-        </div>
-        <div id="loginInfo" class="logoName">
-          <p id="loginUsername">Loged in as: Pia Pernilla</p>
-          <button class="logoutBtn">Logout</button>
-        </div>
-        <footer class="footer footer-general display-flex">
-          <a href=""><img src="media/githubMedia.png" alt="githublogo" /></a>
-          <a href=""><img src="media/xMedia.png" alt="xlogo" /></a>
-          <a href=""
-            ><img src="media/facebookMedia.png" alt="facebooklogo"
-          /></a>
-          <a href=""
-            ><img src="media/instagramMedia.png" alt="instagramlogo"
-          /></a>
-        </footer>
+      <div class="nav-content">
+        <ion-icon
+          id="navCloseIcon"
+          class="close-icon"
+          name="close-outline"
+        ></ion-icon>
+        <ul class="nav-items">
+          <li class="nav-item"><a href="home.html">Home</a></li>
+          <li class="nav-item"><a href="about.html">About Us</a></li>
+          <li class="nav-item"><a href="contact.html">Contact</a></li>
+          <li id="theme-switcher" class="nav-item switch">Light</li>
+        </ul>
       </div>
-      <div class="FlexMessage">
-        <section class="section-about">
-          <div class="section-about-details">
-            <h1 class="display-flex">Who works on CloudZ?</h1>
-
-            <div class="aboutme-card">
-              <img src="" alt="" />
-              <div class="aboutme-content-details">
-                <div class="about-image">
-                  <img src="media/Rectangle 86.svg" alt="" />
-                </div>
-                <div class="about-content">
-                  <h5>Pia Pernilla</h5>
-                  <p>
-                    I developer on the HTML. I am 40 years old coming
-                    formargentinga
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="aboutme-card">
-              <img src="" alt="" />
-              <div class="aboutme-content-details">
-                <div class="about-image">
-                  <img src="media/Rectangle 87.svg" alt="" />
-                </div>
-                <div class="about-content">
-                  <h5>Bob Erving</h5>
-                  <p>
-                    I developer on the HTML. I am 40 years old coming from
-                    argentinga
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="aboutme-card">
-              <img src="" alt="" />
-              <div class="aboutme-content-details">
-                <div class="about-image">
-                  <img src="media/Rectangle 88.svg" alt="" />
-                </div>
-                <div class="about-content">
-                  <h5>Mio</h5>
-                  <p>
-                    I developer on the HTML. I am 40 years old coming from
-                    argentinga
-                  </p>
-                </div>
-              </div>
-            </div>
+    </nav>
+    <div class="container about">
+      <div class="section col-left login">
+        <div class="logo">
+          <img src="media/logoiconname.png" alt="LogoCloudZ" />
+          <p class="heroText">"Be your thought"</p>
+        </div>
+        <div class="profile">
+          <div class="profile_info">
+            <p>You're logged in as:</p>
+            <b>Pia Pernilla</b>
           </div>
-        </section>
+
+          <button class="btn primary">Logout</button>
+        </div>
+      </div>
+      <div class="section about col-right">
+        <h1>Who works on CloudZ?</h1>
+
+        <ul class="person-list">
+          <li class="person-item">
+            <img src="./media/Rectangle 86.svg" />
+            <div class="person-item_content">
+              <div class="person-item_name">Jane Doe</div>
+              <div class="person-item_summary">
+                Hello, i want to be a fireman and i also want to be a hero in
+                the community
+              </div>
+            </div>
+          </li>
+          <li class="person-item">
+            <img src="./media/Rectangle 87.svg" />
+            <div class="person-item_content">
+              <div class="person-item_name">Jane Doe</div>
+              <div class="person-item_summary">
+                Hello, i want to be a fireman and i also want to be a hero in
+                the community
+              </div>
+            </div>
+          </li>
+          <li class="person-item">
+            <img src="./media/Rectangle 88.svg" />
+            <div class="person-item_content">
+              <div class="person-item_name">Jane Doe</div>
+              <div class="person-item_summary">
+                Hello, i want to be a fireman and i also want to be a hero in
+                the community
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
+    <footer class="footer display-flex">
+      <a href=""><img src="media/githubMedia.png" alt="githublogo" /></a>
+      <a href=""><img src="media/xMedia.png" alt="xlogo" /></a>
+      <a href=""><img src="media/facebookMedia.png" alt="facebooklogo" /></a>
+      <a href=""><img src="media/instagramMedia.png" alt="instagramlogo" /></a>
+    </footer>
   </body>
 
   <script
