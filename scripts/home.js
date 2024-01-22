@@ -6,7 +6,7 @@ const displayName = document.querySelector("#usernameDisplay");
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-import { getDatabase, ref, set, child, push, update } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+import { getDatabase, ref, set, child, push, update, query, get, onValue } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -22,9 +22,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-// console.log(app);
 const auth = getAuth(app);
-// console.log(auth);
 const provider = new GoogleAuthProvider();
 const database = getDatabase(app);
 
@@ -32,12 +30,62 @@ const database = getDatabase(app);
 onAuthStateChanged(auth, user => {
     if (user != null) {
         console.log('logged in!');
-        const uid = user.id;
         const username = user.displayName;
         displayName.innerHTML = username;
-        console.log(username);
+        sendData(username);
     } else {
         console.log('No user');
         window.location = '/index.html';
     }
+});
+
+
+function sendData(username) {
+    const userMessageButton = document.querySelector("#userMessageButton").addEventListener("click", postMessage);
+    var userMessageInput = document.querySelector("#userMessageInput").value;
+
+    function postMessage() {
+        // const messageData = {
+        //     username: username,
+        //     message: userMessageInput,
+        // }
+
+        // const updates = {};
+        // // const newPostKey = push(child(ref(database), 'users')).key;
+
+
+        // updates['messages/'] = messageData;
+
+        // update(ref(database), updates);
+
+
+
+
+    }
+}
+
+const messageUpdate = ref(database, 'messages/');
+
+onValue(messageUpdate, (snapshot) => {
+    const data = snapshot.val();
+    console.log(snapshot.val());
+
+    const messageList = document.querySelector("#messageList");
+    // for (const message of data) {
+    //     console.log(message);
+    // }
+    const message = "test";
+    const username = "maria";
+    messageList.innerHTML = `
+            <li class="message-item">
+                <div class="message-item_content">
+                    <div class="message-item_author">${username}</div>
+                    <div class="message-item_text">${message}</div>
+                </div>
+                <div class="message-item_actions">
+                    <button class="btn primary">Edit</button>
+                    <button class="btn negative">Delete</button>
+                </div>
+            </li>
+        `;
 });
