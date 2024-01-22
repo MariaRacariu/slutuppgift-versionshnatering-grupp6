@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style/index.css" />
     <title>Home</title>
     <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/home.js" type="module"></script>
   </head>
 
   <body>
@@ -43,10 +44,10 @@
         <div class="profile">
           <div class="profile_info">
             <p>You're logged in as:</p>
-            <b>Pia Pernilla</b>
+            <b id="usernameDisplay"></b>
           </div>
 
-          <button class="btn primary">Logout</button>
+          <button class="btn primary" id="logOutButton" type="button">Logout</button>
         </div>
       </div>
       <div class="section messages col-right">
