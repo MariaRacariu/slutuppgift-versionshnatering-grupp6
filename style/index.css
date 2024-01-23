@@ -181,7 +181,7 @@ nav .close-icon:hover {
 
 /* Home */
 
-.section.messages {
+.section .messages {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -348,6 +348,7 @@ nav .close-icon:hover {
 .section.contact img {
   width: 100px;
 }
+
 .section.contact p {
   display: flex;
   flex-direction: column;
@@ -420,6 +421,7 @@ nav .close-icon:hover {
     height: 100vh;
     /* background: #578293; */
   }
+
   nav.open .nav-content {
     display: flex;
     flex-direction: column;
@@ -459,8 +461,7 @@ nav .close-icon:hover {
   }
 }
 
-@media only screen and (min-width: 960px) {
-}
+@media only screen and (min-width: 960px) {}
 
 .full {
   width: 100%;
