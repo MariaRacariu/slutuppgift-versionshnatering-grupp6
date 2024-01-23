@@ -27,7 +27,12 @@ const database = getDatabase(app);
 onAuthStateChanged(auth, user => {
     if (user != null) {
         console.log('logged in!');
-        window.location = '/home.html';
+        
+         /* Andréa commented out this part
+            
+            // window.location = '/home.html'; 
+            
+            */
     } else {
         console.log('No user');
     }
@@ -74,10 +79,32 @@ function login() {
 
 
             // return updated array which updates the db
-            window.location = '/home.html';
+
+
+            /* Andréa commented out this part
+            
+            // window.location = '/home.html'; 
+            
+            */
+            
             return update(ref(database), updates);
 
-        }).catch((error) => {
+        })
+
+        //Andréa added this part. Audio that triggers when user have succesfully signed in.
+        .then(() => {
+            const loginSound = new Audio('./audio/login-sound.mp3');
+            loginSound.play();
+            loginSound.addEventListener('ended', () => {
+                window.location = '/home.html';
+            });
+
+            
+        })
+
+        //End of Andréas code
+        
+        .catch((error) => {
             // Handle Errors here.
             const errorCode = error.code;
             const errorMessage = error.message;
@@ -87,5 +114,7 @@ function login() {
             const credential = GoogleAuthProvider.credentialFromError(error);
             // ...
         })
+
+        
 }
 
