@@ -1,27 +1,18 @@
-This is our end project
+Group 6 <br>
+This is our exam project for the Version Control at Grit Academy Frontend 23.
 
-Firebase API (from google, the cloud)
-it's a REST API
+This project is a messaging board which allows users to post a message anonymously or log in with their Google account. Users who log in will be able to edit and delete messages that they have posted.
+We have used Firebase Database (not realtime database).
+If you need access to our database to add features please contact us with your domain and we will add it to the authentication. 
 
+We have currently received 1 feature: <br>
+1. Adrea group 5 (added sound when logging in) (https://github.com/andjan3)
 
-skiss och wiki
-minds 3 sibsidot
-firebase rest API
-each member of group must contribute to other groups projects at least once (3 for VG)
-as leader inpliment 3 features from others
-host on github pages
-users can writte messages on page and display them
-at least 3 features
-present 10 min
-300 words for solo raport I guess
+Please feel free to add features to our project. If you have any questions about the code or features you would like to add please let us know. 
 
+Our wiki: 
 
-VG
-as memeber contribute 3 features to other groups
-projekt leader impliment at least 6 pull requests from others in the group
-responsive design, darkmode
-favicon
-500 words solo rapport
-mockup, wirefram, prototype
-
-deadline 26 jan
+Contributors: 
+Maria : https://github.com/MariaRacariu <br>
+Angelica: https://github.com/AngeLund <br>
+Luna: https://github.com/lunayr
