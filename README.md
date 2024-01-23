@@ -12,7 +12,7 @@ Please feel free to add features to our project. If you have any questions about
 
 Our wiki: 
 
-Contributors: 
+Contributors: <br>
 Maria : https://github.com/MariaRacariu <br>
 Angelica: https://github.com/AngeLund <br>
 Luna: https://github.com/lunayr
