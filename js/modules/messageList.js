@@ -13,9 +13,9 @@ export function createMessageList(data, user, editMode) {
       li.addClass("author");
       let editButton = $("<button class='btn primary'>Edit</button>");
       editButton.on("click", () => toggleEditMode(doc.id, doc.data().message));
-      let deleteButton = $("<button class='btn negative'>Delete</button>");
+      let deleteButton = $("<button class='btn delete'>Delete</button>");
       deleteButton.on("click", () => handleMessageDelete(doc.id));
-      let actions = $("<div class='actions'></div>");
+      let actions = $("<div class='message-buttons'></div>");
       if (!editMode) {
         actions.append(editButton, deleteButton);
       }

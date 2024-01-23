@@ -28,7 +28,7 @@ export function createMessageForm(
 
   form.append(
     textarea,
-    `<button type='submit'>${editMode ? "Save" : "Send"}</button>`,
+    `<button type='submit' class="btn button">${editMode ? "Save" : "Send"}</button>`,
     editMode && cancelButton
   );
   return form;

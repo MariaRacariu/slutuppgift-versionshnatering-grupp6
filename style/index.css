@@ -206,7 +206,9 @@ nav .close-icon:hover {
   display: flex;
   border-radius: 8px;
   border: solid 1px var(--border-card);
-  justify-content: stretch;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  margin-right: 10px;
 }
 
 .message-item_content {
@@ -232,7 +234,7 @@ nav .close-icon:hover {
 }
 
 .message-form {
-  /* position: absolute; */
+  position: absolute;
   width: 100%;
   padding: 24px;
   background: var(--background-card-inner);
@@ -241,6 +243,7 @@ nav .close-icon:hover {
   box-sizing: border-box;
   gap: 16px;
   box-shadow: 0px 4px 32px 4px rgba(34, 34, 34, 0.2);
+  align-items: center;
 }
 
 .message-input {
@@ -274,6 +277,7 @@ nav .close-icon:hover {
   border: none;
   padding: 6px 12px;
   border-radius: 4px;
+  max-height: 30px;
 }
 
 .btn.primary {
@@ -353,6 +357,36 @@ nav .close-icon:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* Marias Css */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px 0px 40px;
+  min-height: 50px;
+  max-height: 50px;
+}
+
+.message {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.message-buttons {
+  min-width: 150px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+body {
+  overflow: hidden;
+}
+
+.delete {
+  background-color: #FE5F55;
 }
 
 @media only screen and (max-width: 960px) {
