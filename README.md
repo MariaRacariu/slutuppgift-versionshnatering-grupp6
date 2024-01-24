@@ -8,7 +8,8 @@ We have used Firebase Database (not realtime database).
 If you need access to our database to add features please contact us with your domain and we will add it to the authentication. 
 
 We have currently received 1 feature: <br>
-1. Adrea group 5 (added sound when logging in) (https://github.com/andjan3)
+1. Adrea group 5 (added sound when logging in) (https://github.com/andjan3) <br>
+2. Javad group 1 (added button in header with info about posting messages as anonymous) (
 
 Please feel free to add features to our project. If you have any questions about the code or features you would like to add please let us know. 
 
