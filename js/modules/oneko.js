@@ -60,7 +60,7 @@ export function oneko() {
         nekoEl.style.width = "32px";
         nekoEl.style.height = "32px";
         nekoEl.style.position = "fixed";
-        nekoEl.style.backgroundImage = "url('../../media/oneko.gif')";
+        nekoEl.style.backgroundImage = "url('./media/oneko.gif')";
         nekoEl.style.imageRendering = "pixelated";
         nekoEl.style.left = "16px";
         nekoEl.style.top = "16px";
@@ -127,6 +127,7 @@ export function oneko() {
 
     function frame() {
         frameCount += 1;
+        let direction = '';
         const diffX = nekoPosX - mousePosX;
         const diffY = nekoPosY - mousePosY;
         const distance = Math.sqrt(diffX ** 2 + diffY ** 2);
