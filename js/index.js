@@ -79,7 +79,7 @@ async function handleMessageCreation(event) {
   let time = new Date();
   const docRef = await addDoc(collection(db, "messages"), {
     authorName: currentUser?.displayName || "Stranger",
-    message: $("#messageTextArea").val(),
+    message: sanitize($("#messageTextArea").val()),
     created: time.getTime(),
     userid: currentUser?.uid || 0,
   });
@@ -89,11 +89,11 @@ async function handleMessageCreation(event) {
 
 // Update page with new massage from database
 async function handleMessageUpdate(event) {
-  console.log("updateing");
+  console.log("updating");
   event.preventDefault();
   let docRef = doc(db, "messages", editDocument?.id);
   await updateDoc(docRef, {
-    message: $("#messageTextArea").val(),
+    message: sanitize($("#messageTextArea").val()),
   });
   render();
   console.log("Document updated with ID: ", docRef.id);
@@ -136,5 +136,18 @@ const unsub = onSnapshot(messagesQuery, (querySnapshot) => {
   messages = messages.reverse();
   render();
 });
+
+function sanitize(message) {
+  const map = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#x27;',
+    "/": '&#x2F;',
+  };
+  const reg = /[&<>"'/]/ig;
+  return message.replace(reg, (match)=>(map[match]));
+}
 
 // signInWithGoogle(auth, provider);
