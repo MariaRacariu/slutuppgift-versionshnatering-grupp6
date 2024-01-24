@@ -369,6 +369,17 @@ nav .close-icon:hover {
   max-height: 50px;
 }
 
+.delete {
+  background-color: #FEA28A;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 220px;
+  max-width: 220px;
+}
+
 .message {
   display: flex;
   flex-direction: column-reverse;
@@ -385,9 +396,7 @@ body {
   overflow: hidden;
 }
 
-.delete {
-  background-color: #FEA28A;
-}
+
 
 /* Maria css end */
 
