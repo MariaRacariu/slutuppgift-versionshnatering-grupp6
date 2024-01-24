@@ -20,7 +20,7 @@ import {
 import { createHeader } from "./modules/header.js";
 import { createMessageList } from "./modules/messageList.js";
 import { createMessageForm } from "./modules/messageForm.js";
-import { oneko } from "./oneko.js";
+import { oneko } from "./modules/oneko.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAget9jBYf9VTtZBwkWwK_6FqUB-jkprr8",
