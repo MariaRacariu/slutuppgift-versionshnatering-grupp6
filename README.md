@@ -9,7 +9,7 @@ If you need access to our database to add features please contact us with your d
 
 We have currently received 1 feature: <br>
 1. Adrea group 5 (added sound when logging in) (https://github.com/andjan3) <br>
-2. Javad group 1 (added button in header with info about posting messages as anonymous) (
+2. Javad group 1 (added button in header with info about posting messages as anonymous)
 
 Please feel free to add features to our project. If you have any questions about the code or features you would like to add please let us know. 
 
