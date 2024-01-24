@@ -12,7 +12,7 @@ export function signInWithGoogle(auth, provider) {
   signInWithPopup(auth, provider)
     .then((result) => {
       // Andréa added this part. Audio that triggers when user have succesfully signed in.
-      const loginSound = new Audio('/[repo]/audio/login-sound.mp3');
+      const loginSound = new Audio('../audio/login-sound.mp3');
       loginSound.volume = 0.3;
       loginSound.play();
 
