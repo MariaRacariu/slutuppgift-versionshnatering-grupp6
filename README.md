@@ -9,7 +9,7 @@ If you need access to our database to add features please contact us with your d
 
 We have currently received 4 feature: <br>
 1. Adrea group 5 (added sound when logging in) (https://github.com/andjan3) <br>
-2. Javad group 1 (added button in header with info about posting messages as anonymous) <br>
+2. Javad group 1 (added button in header with info about posting messages as anonymous)(https://github.com/JavadJananeh) <br>
 3. Mango (added user message input sanitization) (https://github.com/klootus) <br>
 4. Quan (added oneko on the home page) (https://github.com/nauqo) <br>
 
