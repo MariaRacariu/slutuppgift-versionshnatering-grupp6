@@ -39,15 +39,19 @@ const db = getFirestore(app);
 let editMode = false;
 let editDocument;
 
+// The query for seeting up the database structure
 const messagesQuery = query(
   collection(db, "messages"),
   orderBy("created", "desc"),
   limit(10)
 );
+
 let messages = [];
 
+// Declaring current user varibale to user globaly
 let currentUser;
 
+// Checks if user is online
 onAuthStateChanged(auth, (user) => {
   if (user) {
     console.log("user detected: " + user.displayName);
@@ -65,6 +69,11 @@ onAuthStateChanged(auth, (user) => {
   render();
 });
 
+// Create message in database and fill with data
+// If user exists/logged in otherwise use Strager
+// Message value from message input
+// Created time get local time
+// User id if logged in otherwise 0
 async function handleMessageCreation(event) {
   event.preventDefault();
   let time = new Date();
@@ -78,6 +87,7 @@ async function handleMessageCreation(event) {
   console.log("Document written with ID: ", docRef.id);
 }
 
+// Update page with new massage from database
 async function handleMessageUpdate(event) {
   console.log("updateing");
   event.preventDefault();
@@ -90,16 +100,20 @@ async function handleMessageUpdate(event) {
   toggleEditMode();
 }
 
+// Delete message
 export async function handleMessageDelete(docid) {
   await deleteDoc(doc(db, "messages", docid));
 }
 
+// Edit Message
 export function toggleEditMode(id, message) {
   editMode = !editMode;
   editDocument = { id, message };
   render();
 }
 
+// Created html elements
+// So very time an action happens you call render for it to "render" html elemnts for that part
 function render() {
   root.html("");
   root.append(

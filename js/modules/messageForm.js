@@ -7,9 +7,11 @@ export function createMessageForm(
   doc
 ) {
   const form = $("<form class='message-form'></form>");
+
   if (editMode) {
     form.addClass("edit");
   }
+
   if (editMode) {
     form.on("submit", handleMessageUpdate);
   } else {
@@ -19,6 +21,7 @@ export function createMessageForm(
   let textarea = $(
     "<textarea id='messageTextArea' placeholder='Enter your message' class='message-input'></textarea>"
   );
+  
   if (editMode) {
     textarea.html(doc?.message);
   }
