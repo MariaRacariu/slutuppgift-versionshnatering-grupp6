@@ -1,5 +1,7 @@
 import { signInWithGoogle, signOutFromGoogle } from "../auth.js";
 
+
+
 export function createHeader(auth, provider, user) {
   const header = $("<div class='header'></div>");
   if (user) {
@@ -9,9 +11,17 @@ export function createHeader(auth, provider, user) {
     header.append(logoutButton);
   } else {
     header.append("Welcome, stranger!");
+    let buttonContainer = $("<div class='buttonContainer'></div>");
+    header.append(buttonContainer);
+
     let loginButton = $("<button class='btn button primary'>Login with Google</button>");
     loginButton.on("click", () => signInWithGoogle(auth, provider));
-    header.append(loginButton);
+    buttonContainer.append(loginButton);
+
+    var button = $("<button class='btn button delete'> Read me!</button > ");
+    button.on("click", () => alert("Warning! If you don't log in, you will not have the right to delete or edit your messages. If your messages are dangerous or offensive they will be deleted by admin!"));
+    buttonContainer.append(button);
   }
+
   return header;
 }
