@@ -77,14 +77,25 @@ onAuthStateChanged(auth, (user) => {
 async function handleMessageCreation(event) {
   event.preventDefault();
   let time = new Date();
-  const docRef = await addDoc(collection(db, "messages"), {
-    authorName: currentUser?.displayName || "Stranger",
-    message: sanitize($("#messageTextArea").val()),
-    created: time.getTime(),
-    userid: currentUser?.uid || 0,
-  });
-  render();
-  console.log("Document written with ID: ", docRef.id);
+  const message = $("#messageTextArea").val();
+  if(message === 'todays weather'){
+    const weather = getWeather();
+    weather.then(data => {
+      if(data && data.timeSeries && data.timeSeries.length){
+        const cel = data.timeSeries[0].parameters.find(p => p.name === 't');
+        alert(`It is ${cel.values[0]} degrees Celcius in Malmö`);
+      }
+    })
+  }else{
+    const docRef = await addDoc(collection(db, "messages"), {
+      authorName: currentUser?.displayName || "Stranger",
+      message: sanitize(message),
+      created: time.getTime(),
+      userid: currentUser?.uid || 0,
+    });
+    render();
+    console.log("Document written with ID: ", docRef.id);
+  }
 }
 
 // Update page with new massage from database
@@ -151,3 +162,11 @@ function sanitize(message) {
 }
 
 // signInWithGoogle(auth, provider);
+
+//Wheather function by Angelica
+async function getWeather(){
+  const url = "https://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/12/lat/55/data.json";
+  let response = await fetch(url, {});
+  let data = await response.json();
+  return data;
+}
