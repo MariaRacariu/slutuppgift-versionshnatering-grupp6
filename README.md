@@ -7,7 +7,7 @@ This project is a messaging board which allows users to post a message anonymous
 We have used Firebase Database (not realtime database).
 If you need access to our database to add features please contact us with your domain and we will add it to the authentication. 
 
-We have currently received 1 feature: <br>
+We have currently received 4 feature: <br>
 1. Adrea group 5 (added sound when logging in) (https://github.com/andjan3) <br>
 2. Javad group 1 (added button in header with info about posting messages as anonymous) <br>
 3. Mango (added user message input sanitization) (https://github.com/klootus) <br>
