@@ -12,7 +12,7 @@ We have currently received 4 feature: <br>
 2. Javad group 1 (added button in header with info about posting messages as anonymous)(https://github.com/JavadJananeh) <br>
 3. Mango (added user message input sanitization) (https://github.com/klootus) <br>
 4. Quan (added oneko on the home page) (https://github.com/nauqo) <br>
-5. Elvira (added on mobile click on logo, it spins and takes you to home page)(https://github.com/elviradisa) <br>
+5. Elvira (added on mobile click on logo, it spins and takes you to home page, using anime.js)(https://github.com/elviradisa) <br>
 
 Please feel free to add features to our project. If you have any questions about the code or features you would like to add please let us know. 
 
