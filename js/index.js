@@ -79,24 +79,26 @@ async function handleMessageCreation(event) {
   event.preventDefault();
   let time = new Date();
   const message = $("#messageTextArea").val();
-  if(message === 'todays weather'){
+  if (message === 'todays weather') {
     const weather = getWeather();
     weather.then(data => {
-      if(data && data.timeSeries && data.timeSeries.length){
+      if (data && data.timeSeries && data.timeSeries.length) {
         const cel = data.timeSeries[0].parameters.find(p => p.name === 't');
         alert(`It is ${cel.values[0]} degrees Celcius in Malmö`);
       }
     })
   }
-  else if(message === 'oneko'){
+  else if (message === 'oneko') {
     oneko();
   }
-  else{
+  else {
+    const colorPick = document.querySelector('#colorPick').value;
     const docRef = await addDoc(collection(db, "messages"), {
       authorName: currentUser?.displayName || "Stranger",
       message: sanitize(message),
       created: time.getTime(),
       userid: currentUser?.uid || 0,
+      color: colorPick,
     });
     render();
     console.log("Document written with ID: ", docRef.id);
@@ -163,13 +165,13 @@ function sanitize(message) {
     "/": '&#x2F;',
   };
   const reg = /[&<>"'/]/ig;
-  return message.replace(reg, (match)=>(map[match]));
+  return message.replace(reg, (match) => (map[match]));
 }
 
 // signInWithGoogle(auth, provider);
 
 //Wheather function by Angelica
-async function getWeather(){
+async function getWeather() {
   const url = "https://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/12/lat/55/data.json";
   let response = await fetch(url, {});
   let data = await response.json();

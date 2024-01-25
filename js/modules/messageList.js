@@ -5,7 +5,7 @@ export function createMessageList(data, user, editMode) {
   data.forEach((doc) => {
     doc.data();
     let li = $(
-      `<li id="${doc.id}" class="message-item"><div><i class="message-item_author">${doc.data().authorName
+      `<li id="${doc.id}" class="message-item"><div><i class="message-item_author" style='color:${doc.data().color}'>${doc.data().authorName
       }</i><p class="message-item_text">${doc.data().message}</p></div></li>`
     );
 

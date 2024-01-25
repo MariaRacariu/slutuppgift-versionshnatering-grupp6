@@ -19,9 +19,9 @@ export function createMessageForm(
   }
 
   let textarea = $(
-    "<textarea id='messageTextArea' placeholder='Enter your message' class='message-input'></textarea>"
+    "<textarea id='messageTextArea' placeholder='Enter your message' class='message-input'></textarea><input type='color' value='#000000' id='colorPick'>"
   );
-  
+
   if (editMode) {
     textarea.html(doc?.message);
   }
