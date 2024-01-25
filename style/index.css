@@ -303,7 +303,7 @@ footer {
 
   /* Navigation */
   nav {
-    background: url("/media/Cloudcover.jpg") no-repeat center center;
+    background: url("../media/Cloudcover.jpg") no-repeat center center;
     background-size: cover;
     position: relative;
     width: 100%;
