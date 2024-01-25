@@ -65,10 +65,25 @@ body {
   gap: 24px;
 }
 
-.logo img {
+img.logo {
   width: 160px;
   border-radius: 20px;
 }
+
+/* Elvira */
+.logoAnimation {
+  animation-name: rotate;
+  animation-duration: 1000ms;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  } to {
+    transform: rotate(360deg);
+  }
+}
+/* /Elvira */
 
 .logo p {
   color: white;

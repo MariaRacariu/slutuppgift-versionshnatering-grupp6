@@ -1,3 +1,8 @@
+// click on icon, call function 'iconAnimation'
+// Elvira
+// feel free att lägga den var ni vill, ville bara vara tydlig
+$('a').click(iconAnimation);
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
 import {
   getFirestore,
@@ -21,6 +26,7 @@ import { createHeader } from "./modules/header.js";
 import { createMessageList } from "./modules/messageList.js";
 import { createMessageForm } from "./modules/messageForm.js";
 import { oneko } from "./modules/oneko.js";
+import { iconAnimation } from "./modules/iconAnimation.js"
 
 const firebaseConfig = {
   apiKey: "AIzaSyAget9jBYf9VTtZBwkWwK_6FqUB-jkprr8",
